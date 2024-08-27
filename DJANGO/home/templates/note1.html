@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <h1>Notes</h1>
+    <a href="{% url 'authen' %}">Click here to go to Authourized Place</a>
+
+
+    <ul>
+        {% for n in notes %}
+            <li>{{n.title}}</li>
+            <a href="{% url 'notes.detail' pk=n.id%}"><input type="submit" class="btn btn-primary"  value="Go"></a>
+        {% endfor %}        
+    
+    </ul>
+    <a href="{% url 'notes.create' %}"><input value="Create" class="btn btn-primary" /></a>
+    
+{% endblock %}

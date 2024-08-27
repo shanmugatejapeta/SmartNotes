@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form method="POST">{% csrf_token %}
+    <p class="class1">Are You Sure. This Can't be UNDONE</p>
+
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="{% url 'notes.detail' pk=note.id%}"><input value="Back" class="btn"/></a>
+</form>
+
+{% endblock %}

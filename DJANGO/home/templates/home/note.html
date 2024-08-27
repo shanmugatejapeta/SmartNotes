@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1>{{note.title}}</h1>
+    <p>{{note.para}}</p>
+    <br />
+    <p>{{note.created}}</p>
+
+    <a href="{% url 'notes.update' pk=note.id %}" ><input value='Update' class="btn btn-primary" /></a>
+    
+    <a href="{% url 'notes.delete' pk=note.id %}" ><input value='Delete' class="btn btn-danger" /></a>
+    <a href="{% url 'notes.list'%}" ><input value='Back' class="btn" /></a>
+    
+{% endblock %}
